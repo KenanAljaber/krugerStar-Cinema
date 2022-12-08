@@ -1,0 +1,26 @@
+.search{
+    width: 50vw;
+    padding: 10px;
+    border-radius: 8px;
+    border-style: none;
+    font-family: 'Barlow Condensed';
+    color: black;
+    font-weight: 500;
+    font-size: 1.8vw;
+}
+
+.searchContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.closeImg{
+    margin-left: -3vw;
+    width: 2vw;
+}
+.closeImg:hover{
+cursor: pointer;
+
+}
+

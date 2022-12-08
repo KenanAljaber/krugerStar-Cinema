@@ -1,0 +1,34 @@
+:root{
+    --red:#E50914;
+    
+  }
+
+.bannerContainer{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: var(--red);
+    margin-top: 10%;
+    padding: 20px 0px 20px 0px;
+    align-items: center;
+   
+
+
+}
+
+.title{
+    font-size: 7vw;
+    background: black;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.slogan{
+    margin-bottom: 2vw;
+    font-weight: 200;
+    font-style: italic;
+    font-size: 1.9vw;
+   
+}
+
