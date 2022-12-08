@@ -4,20 +4,75 @@
     flex-direction: column;
     align-items: center;
     margin: 30px 5px 5px 5px;
+    animation: initalAn linear 0.7s forwards;
 }
+
 
 .movieImg{
     border-radius: 10px;
     height: 325px;
     width: 225px;
+    
 }
 
 .movieName{
-    font-size: 2vw;
+    font-size: 25px;
     width: max-content;
     font-weight: 100;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.cardBtn{
+    width: 225px;
+    padding: 7px;
+    border-style: none;
+    border-radius: 8px;
+    margin-top: 8px;
+    background: var(--red);
+    color: white;
+    font-weight: 100;
+    font-size: 16px;
+}
+
+.cardBtn:hover{
+    background:white ;
+    color: var(--red);
+    font-weight: 600;
+    animation: pop linear 0.7s forwards;
+}
+
+.movieImg:hover{
+    animation: pop linear 0.7s forwards;
+    
+}
+
+@keyframes pop {
+    0%{
+        transform: scale(100%);
+    }
+    50%{
+        transform: scale(110%);
+    }
+    100%{
+        transform: scale(100%);
+    }
+}
+@keyframes initalAn {
+    0%{
+        opacity: 0;
+        transform: scale(110%);
+    }
+   
+    100%{
+        opacity: 1;
+        transform: scale(100%);
+    }
+    
 }
 
 @media (max-width: 700px) {
-    
+    .movieName{
+        
+    }
 }

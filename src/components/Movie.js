@@ -2,9 +2,11 @@ import "../styles/movie.css"
 const Movie = ({movie}) => {
     return ( 
         <div className="movieCard">
-          
+           <div className="movieName">{movie.name}</div>
             <img src={movie.cover} className="movieImg"/>
-            <div className="movieName">{movie.name}</div>
+           
+            <button className="cardBtn">Details</button>
+
         </div>
      );
 }
