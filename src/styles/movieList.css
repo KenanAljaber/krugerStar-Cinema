@@ -1,0 +1,10 @@
+.grid{
+    grid-template-columns: repeat(6,1fr);
+    margin: 50px 25px 50px 25px;
+    color: white;
+    display: grid;
+    justify-items: center;
+}
+@media (max-width: 700px) {
+    
+}
