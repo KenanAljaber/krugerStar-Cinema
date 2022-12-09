@@ -5,8 +5,17 @@
     align-items: center;
     margin: 30px 5px 5px 5px;
     animation: initalAn linear 0.7s forwards;
+   /*animation: slide linear 0.8s forwards;*/
 }
 
+@keyframes slide {
+    0%{
+        transform: translateX(2000px);
+    }100%{
+        transform: translateX(0px);
+    }
+    
+}
 
 .movieImg{
     border-radius: 10px;
@@ -39,6 +48,7 @@
     background:white ;
     color: var(--red);
     font-weight: 600;
+    transition: 1s;
     animation: pop linear 0.7s forwards;
 }
 
