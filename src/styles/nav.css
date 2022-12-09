@@ -37,3 +37,26 @@ div.dropdown-menu.show {
     font-size: 1.2em !important;
     background-color: rgb(0, 0, 0);
 }
+
+/* ESTILOS DEL FOOTER*/
+footer{
+  background-color: black;
+  color: white;
+  justify-content: space-evenly !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 50px !important;
+  border-top: 6px solid rgb(52, 58, 64);
+
+  /* border-top: 6px radial-gradient(red, yellow, rgb(30, 144, 255)) !important; */
+}
+footer p{
+  margin: 1px;
+  font-size: 15px ;
+  text-align: center;
+}
+.gitLink {
+  color: rgb(229, 9, 20) !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+}
