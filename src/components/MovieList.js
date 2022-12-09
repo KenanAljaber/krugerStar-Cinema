@@ -1,79 +1,70 @@
+import { useEffect, useState } from "react";
 import "../styles/movieList.css"
 import Movie from "./Movie";
-const MovieList = () => {
-    const movies = [{
-        id: crypto.randomUUID(),
-        name: "Game of thrones",
-        cover: "https://th.bing.com/th/id/R.a45b004ae05e0ec504ff62b37361063a?rik=kpKACratk9YjAA&riu=http%3a%2f%2f4.bp.blogspot.com%2f-kWvgUruIjbY%2fT0F2NXUz_hI%2fAAAAAAAAACY%2f7luAzTpO7sU%2fs1600%2fGoT%2bcover.jpg&ehk=tmFEoCb5KYHUkE6wXkGol3g00PLvj9Yx9AkmS9nLuME%3d&risl=&pid=ImgRaw&r=0",
-        country: "England"
-    },
-    {
-        id: crypto.randomUUID(),
-        name: "Game of thrones",
-        cover: "https://th.bing.com/th/id/OIP.lEPKHjfgyqToCt01t9T1LQHaML?pid=ImgDet&rs=1",
-        country: "England"
-    },
-    {
-        id: crypto.randomUUID(),
-        name: "Game of thrones",
-        cover: "https://allbookshub.com/wp-content/uploads/2019/05/A-Game-of-Thrones-Pdf.jpg",
-        country: "England"
-    },
-    {
-        id: crypto.randomUUID(),
-        name: "Game of thrones",
-        cover: "https://hadafnovin.com/wp-content/uploads/2019/04/A-Game-of-Thrones-Book-1-2.jpg",
-        country: "England"
-    }, {
-        id: crypto.randomUUID(),
-        name: "Game of thrones",
-        cover: "https://allbookshub.com/wp-content/uploads/2019/05/A-Game-of-Thrones-Pdf.jpg",
-        country: "England"
-    },
-    {
-        id: crypto.randomUUID(),
-        name: "Game of thrones",
-        cover: "https://hadafnovin.com/wp-content/uploads/2019/04/A-Game-of-Thrones-Book-1-2.jpg",
-        country: "England"
-    },   {
-        id: crypto.randomUUID(),
-        name: "Game of thrones",
-        cover: "https://th.bing.com/th/id/OIP.lEPKHjfgyqToCt01t9T1LQHaML?pid=ImgDet&rs=1",
-        country: "England"
-    },
-    {
-        id: crypto.randomUUID(),
-        name: "Game of thrones",
-        cover: "https://allbookshub.com/wp-content/uploads/2019/05/A-Game-of-Thrones-Pdf.jpg",
-        country: "England"
-    },
-    {
-        id: crypto.randomUUID(),
-        name: "Game of thrones",
-        cover: "https://hadafnovin.com/wp-content/uploads/2019/04/A-Game-of-Thrones-Book-1-2.jpg",
-        country: "England"
-    }, {
-        id: crypto.randomUUID(),
-        name: "Game of thrones",
-        cover: "https://allbookshub.com/wp-content/uploads/2019/05/A-Game-of-Thrones-Pdf.jpg",
-        country: "England"
-    },
-    {
-        id: crypto.randomUUID(),
-        name: "Game of thrones",
-        cover: "https://hadafnovin.com/wp-content/uploads/2019/04/A-Game-of-Thrones-Book-1-2.jpg",
-        country: "England"
-    }];
+import { connect } from "react-redux";
+import finalPropsSelectorFactory from "react-redux/es/connect/selectorFactory";
+const MovieList = ({movies}) => {
+    const[start,setStart]=useState(0);
+    const[end,setEnd]=useState(15);
+
+
+    //en este method solo actualizo los estados start y end cada vez que se presiona el boton next
+    function handleNext(){
+        if((end+15)>movies.length && end!=movies.length-1){
+            setEnd(movies.length-1);
+            setStart((end-15));
+            console.log("bigger")
+        }else if(end==movies.length-1){
+            console.log("equal")
+            setEnd(15);
+            setStart(0);
+        }else{
+            setStart((start+15));
+            setEnd((end+15));
+        }
+       
+       console.log(start,end,movies.length);
+    }
+
+    //en este method solo actualizo los estados start y end cada vez que se presiona el boton back
+    function handleBack(){
+        console.log(start,end,movies.length)
+        if(start>=15 && end>=30){
+            setStart((start-15));
+            setEnd((end-15));
+        }else{
+            setStart(0);
+            setEnd(15);
+        }
+    }
     return (
+        <div>
         <div className="grid">
             {
-                movies.map(it => {
+                movies.slice(start,end).map(it => {
                     return <Movie movie={it} key={it.id} />
                 })
             }
-
+            
+        </div>
+        <div className="nextBtnContainer">
+            {
+            movies.length>15 &&
+          <div>
+        <button onClick={handleBack}>Back</button>
+        <button onClick={handleNext}>Next</button>
+        </div> 
+    }
+        
+        </div>
         </div>
     );
 }
 
-export default MovieList;
+const mapStatesToProps=(state)=>{
+    return{
+        moviesReducer: state.movies_reducer
+    }
+}
+
+export default connect(mapStatesToProps)(MovieList);
