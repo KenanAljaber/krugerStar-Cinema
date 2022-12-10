@@ -1,28 +1,29 @@
+
 import HomePage from "./pages/HomePage";
-import "./styles/index.css";
-import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import PageDetails from "./components/PageDetails";
+import "./styles/index.css";
+import store from "./store/MovieStore";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import NavBar from "./components/NavBar"
+import Footer from "./components/Footer"
+
+
+
+
 function App() {
   return (
-    <>
-
-      <div className="App">
-        <Router>
-          <NavBar />
-          <Routes>
-            <Route path="/Details" element={<HomePage />} />
-            <Route path="/" element={<PageDetails />} />
-          </Routes>
-          <Footer />
-        </Router>
-
-      </div>
-
-    </>
-
+    <Provider store={store}>
+    <div className="App">
+      <Router>
+        <NavBar/>
+       <Routes>
+        <Route path="/" element={<HomePage/>}/>
+       </Routes>
+       <Footer/>
+       </Router>
+    </div>   
+    </Provider>
 
 
   );
