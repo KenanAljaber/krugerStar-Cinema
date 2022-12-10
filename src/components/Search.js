@@ -1,6 +1,6 @@
 import "../styles/search.css"
 import close from "../assets/closeRed.png"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {connect} from "react-redux";
 import { cancelSearch, searchMovies } from "../store/actions/actions";
 
@@ -9,6 +9,12 @@ import { cancelSearch, searchMovies } from "../store/actions/actions";
 const Search = (props) => {
     const [searchValue,setSearchValue]=useState("");
 
+    useEffect(()=>{
+        //in case we go back from details page to home page we cancel the previous search
+        props.cancelSearch([]);
+
+    },[])
+
 
     //aqui se cambia el estado searchValue cada vez que pasa un cambio en el search bar
     function handleOnchange(e){
@@ -16,7 +22,8 @@ const Search = (props) => {
         setSearchValue(data);
         let filteredData= filterData(searchValue,props.movies_reducer.data);
         if(data===""){
-            filteredData=[];
+            props.cancelSearch([]);
+
         }
         props.searchMovies(filteredData);
       

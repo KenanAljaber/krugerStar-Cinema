@@ -1,12 +1,11 @@
 
 import Banner from "../components/Banner";
 import MovieList from "../components/MovieList";
-import useMovies from "../hooks/useMovies";
 import "../styles/homePage.css"
 import { connect } from "react-redux";
 import Loading from "../components/Loading";
-const HomePage = (props) => {
-   useMovies();
+const HomePage = ({movies_reducer}) => {
+
     
     return (
         <div className="homePageContainer">
@@ -14,7 +13,7 @@ const HomePage = (props) => {
             <Banner title="Series Mix" slogan="Your home of entertaiment." />
             
             {
-           props.movies_reducer.finished ? <MovieList movies={props.movies_reducer.filteredData.length>0? props.movies_reducer.filteredData : props.movies_reducer.data } />
+           movies_reducer.finished ? <MovieList movies={movies_reducer.searching? movies_reducer.filteredData : movies_reducer.data } />
                     :
                     <Loading/>
 

@@ -30,19 +30,22 @@ const useMovies = () => {
     }
 
     function filterApiData(data){
+
             const arr=data.reduce((accum,actual)=>{
-             
+               
+                const summary= actual.summary.substring(3,actual.summary.length-4).replace("</b>","").replace("<b>","");
+                
                     const movie={
                         id: crypto.randomUUID(),
                         name : actual.name,
                         status: actual.status,
                         officialSite: actual.officialSite,
                         language: actual.language,
-                        summary: actual.summary,
-                       
+                        summary: summary,
                         endDate: actual.ended,
-                        geners: actual.genres, // array 
-                        images: actual.image //array
+                        geners: actual.genres.toString(), // array 
+                        images: actual.image, //array
+                        rating:actual.rating.average
                     }
                     accum.push(movie);
                     return accum;

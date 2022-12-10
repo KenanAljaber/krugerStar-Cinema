@@ -33,6 +33,13 @@
     animation: pop linear 1s forwards;
     transition: 1s;
 }
+.notFound{
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #361b1b;
+}
 
 @media (min-width: 200px) and (max-width: 525px) {
     .grid{

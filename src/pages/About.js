@@ -4,16 +4,19 @@ const About = () => {
     return (
         <div>
             <div className="aboutContainer">
-               
+               <div className="photosContainer">
                     <img />
-               
+                    <img src={kenanPhoto}/>
+                    </div>
 
                 <div className="discContainer">
-                    This is description of our team
+                    We are a team of tow software developers Kenan and Ariel,
+                     this site is our participation in the Kruger Star reality Front-end course, presented by Kruger Corp.
+                     We hope you like it.
                 </div>
 
                 
-                    <img src={kenanPhoto}/>
+                    
               
 
             </div>

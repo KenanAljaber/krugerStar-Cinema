@@ -5,9 +5,12 @@ import { connect } from "react-redux";
 const MovieList = ({movies,moviesReducer}) => {
     const[start,setStart]=useState(0);
     const[end,setEnd]=useState(15);
+    const[notFound,setNotFound]=useState(false);
     useEffect(()=>{
         setStart(0);
         setEnd(15);
+        setNotFound(movies.length>0? false:true);
+     
     },[moviesReducer.filteredData])
 
     //en este method solo actualizo los estados start y end cada vez que se presiona el boton next
@@ -42,19 +45,24 @@ const MovieList = ({movies,moviesReducer}) => {
     }
     return (
         <div>
+            {!notFound?
         <div className="grid">
-            {
+            {   
                 movies.slice(start,end).map(it => {
                     return <Movie movie={it} key={it.id} />
-                })
+                }) 
             }
             
-        </div>
+        </div> : <div className="notFound">No results</div>
+        }
         <div className="nextBtnContainer">
             {
             movies.length>15 &&
           <div>
+            {start>0&&
         <button onClick={handleBack}>Back</button>
+    }
+   
         <button onClick={handleNext}>Next</button>
         </div> 
     }

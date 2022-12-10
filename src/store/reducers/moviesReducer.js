@@ -4,7 +4,8 @@ const default_movies_reducer = {
     finished: false,
     data: [],
     filteredData:[],
-    searching:false
+    searching:false,
+    
 }
 
 const movies_reducer = (state = default_movies_reducer, action) => {
