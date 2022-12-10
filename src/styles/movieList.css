@@ -29,6 +29,7 @@
     cursor: pointer;
     background: white;
     color: var(--red);
+    font-weight: 600;
     animation: pop linear 1s forwards;
     transition: 1s;
 }

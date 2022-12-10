@@ -14,8 +14,13 @@ const Search = (props) => {
     function handleOnchange(e){
         const data=e.target.value;
         setSearchValue(data);
-        const filteredData= filterData(searchValue,props.movies_reducer.data);
+        let filteredData= filterData(searchValue,props.movies_reducer.data);
+        if(data===""){
+            filteredData=[];
+        }
         props.searchMovies(filteredData);
+      
+
 
         
     }
@@ -47,7 +52,7 @@ const Search = (props) => {
             <input className="search" type="text" placeholder="Type a movie name, movie type to search our movies "
              onChange={handleOnchange} value={searchValue}/>
              {searchValue.length>0 &&
-                <img src={close}  className="closeImg" onClick={handleImgClick}/>
+                <img src={close}  className="closeImg" onClick={handleImgClick} alt="close"/>
              }
             
         </div>     );

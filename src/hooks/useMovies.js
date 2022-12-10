@@ -9,6 +9,7 @@ const useMovies = () => {
  
   useEffect(()=>{
     loadBooks();
+    console.log("called")
     
   },[])
     async function loadBooks(){

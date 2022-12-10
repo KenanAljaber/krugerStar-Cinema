@@ -2,19 +2,22 @@ import { useEffect, useState } from "react";
 import "../styles/movieList.css"
 import Movie from "./Movie";
 import { connect } from "react-redux";
-import finalPropsSelectorFactory from "react-redux/es/connect/selectorFactory";
-const MovieList = ({movies}) => {
+const MovieList = ({movies,moviesReducer}) => {
     const[start,setStart]=useState(0);
     const[end,setEnd]=useState(15);
-
+    useEffect(()=>{
+        setStart(0);
+        setEnd(15);
+    },[moviesReducer.filteredData])
 
     //en este method solo actualizo los estados start y end cada vez que se presiona el boton next
     function handleNext(){
-        if((end+15)>movies.length && end!=movies.length-1){
+       
+        if((end+15)>movies.length && end!==movies.length-1){
             setEnd(movies.length-1);
             setStart((end-15));
             console.log("bigger")
-        }else if(end==movies.length-1){
+        }else if(end===movies.length-1){
             console.log("equal")
             setEnd(15);
             setStart(0);
@@ -23,7 +26,7 @@ const MovieList = ({movies}) => {
             setEnd((end+15));
         }
        
-       console.log(start,end,movies.length);
+       
     }
 
     //en este method solo actualizo los estados start y end cada vez que se presiona el boton back
