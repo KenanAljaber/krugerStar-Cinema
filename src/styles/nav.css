@@ -1,4 +1,34 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+
+
+@media (min-width: 200px) and (max-width: 525px) {
+    
+  :root {
+      --title-padding-top: flex-start;
+    }
+  
+
+}
+
+@media (min-width: 525px) and (max-width: 725px) {
+  :root {
+      --align-self:end;
+    }
+}
+
+@media (min-width: 725px) and (max-width: 920px) {
+  :root {
+      --align-self: end;
+    }
+  }
+@media (min-width: 920px) and (max-width: 1600px) {
+  :root {
+      --align-self:center;
+    }
+}
+
 /* ESTILOS DEL NAVBAR*/
 .Navbar {
   background-color: black !important;
@@ -86,6 +116,7 @@ footer p {
   font-size: 15px;
   text-align: center;
 }
+
 
  .gitLink:hover{
   color: white;
