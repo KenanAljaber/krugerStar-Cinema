@@ -8,7 +8,7 @@
     flex-direction: column;
     color: white;
     background-color: var(--red);
-    margin-top: 10%;
+    margin-top: 3%;
     padding: 20px 0px 20px 0px;
     align-items: center;
    animation: slide linear 1.5s forwards;

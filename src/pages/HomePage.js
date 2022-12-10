@@ -4,8 +4,6 @@ import MovieList from "../components/MovieList";
 import useMovies from "../hooks/useMovies";
 import "../styles/homePage.css"
 import { connect } from "react-redux";
-import { fetched_movies } from "../store/actions/actions";
-import { useEffect } from "react";
 const HomePage = (props) => {
    useMovies();
     
