@@ -1,0 +1,27 @@
+.loadingContainer{
+    display: inline-flex;
+    flex-direction: row;
+    color: white;
+    align-self: center;
+    font-size: 3rem;
+    margin-top: 50px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+.loadingPart{
+
+}
+
+.pointsToHide{
+    animation: loading cubic-bezier(0.46, 0.03, 0.52, 0.96) 1s infinite;
+}
+
+@keyframes loading {
+    0%{
+        
+        opacity: 1;
+    }100%{
+        
+        opacity: 0;
+    }
+}

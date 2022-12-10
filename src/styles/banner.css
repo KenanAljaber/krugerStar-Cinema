@@ -8,16 +8,16 @@
     flex-direction: column;
     color: white;
     background-color: var(--red);
-    margin-top: 10%;
+    margin-top: 3%;
     padding: 20px 0px 20px 0px;
     align-items: center;
-   
+   animation: slide linear 1.5s forwards;
 
 
 }
 
 .title{
-    font-size: 7vw;
+    font-size: 7rem;
     background: black;
     width: 100%;
     text-align: center;
@@ -28,7 +28,52 @@
     margin-bottom: 2vw;
     font-weight: 200;
     font-style: italic;
-    font-size: 1.9vw;
+    font-size: 2rem;
+    
    
+}
+.slogan:hover{
+    cursor:default;
+    animation:spin cubic-bezier(0, 0, 0.28, 0.9) 0.5s forwards;
+    
+}
+
+@keyframes spin {
+    0%{
+        
+        transform: rotate(0deg);
+       
+    }
+    100%{
+        transform: rotate(360deg);
+       
+      
+    }
+}
+
+@keyframes slide {
+    0%{
+        transform: translateX(2000px);
+    }
+    100%{
+        transform: translateX(0px);
+       
+    }
+   
+    
+    
+}
+
+@media (min-width: 200px) and (max-width: 700px) {
+    .title{
+        font-size: 4rem;
+    }
+    .slogan{
+        font-size: 1.5rem;
+    }
+    .bannerContainer{
+        margin-top: 15%;
+       
+    }
 }
 

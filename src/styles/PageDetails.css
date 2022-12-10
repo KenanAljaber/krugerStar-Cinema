@@ -36,6 +36,10 @@
     color: white !important;
     display: flex !important;
     flex-direction: row !important;
+<<<<<<< HEAD
+    font-size: 20px;
+=======
+>>>>>>> addb311ab5bc4708159fe69caf899e01d27719b1
 }
 
 .DetailsImg {
@@ -49,4 +53,15 @@
 .DetailsTitle h1 {
     font-size: 3em;
     font-weight: bold;
+<<<<<<< HEAD
+}
+.backBtnContainer{
+    text-align: center;
+}
+.backButton{
+    width: 20%;
+    --bs-bg-opacity: 1;
+    background-color: var(--red)!important;
+=======
+>>>>>>> addb311ab5bc4708159fe69caf899e01d27719b1
 }

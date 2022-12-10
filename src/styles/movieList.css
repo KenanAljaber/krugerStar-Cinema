@@ -1,0 +1,63 @@
+.grid{
+    grid-template-columns: repeat(5,1fr);
+    margin: 50px 25px 50px 25px;
+    color: white;
+    display: grid;
+    justify-items: center;
+  
+}
+.nextBtnContainer{
+    text-align: center;
+    padding: 10px;
+}
+.nextBtnContainer button{
+    width: 225px;
+    padding: 7px;
+    border-style: none;
+    border-radius: 8px;
+    margin-top: 8px;
+    background: black;
+    border: solid;
+    border-color: var(--red);
+    color: white;
+    font-weight: 100;
+    font-size: 16px;
+    margin-left: 10px;
+
+}
+.nextBtnContainer button:hover{
+    cursor: pointer;
+    background: white;
+    color: var(--red);
+    font-weight: 600;
+    animation: pop linear 1s forwards;
+    transition: 1s;
+}
+.notFound{
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #361b1b;
+}
+
+@media (min-width: 200px) and (max-width: 525px) {
+    .grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+@media (min-width: 525px) and (max-width: 725px) {
+    .grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (min-width: 725px) and (max-width: 1100px) {
+    .grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media (min-width: 1100px) and (max-width: 1250px) {
+    .grid{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
