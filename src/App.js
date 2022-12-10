@@ -9,7 +9,7 @@ import Footer from "./components/Footer"
 import PageDetails from "./pages/PageDetails";
 import useMovies from "./hooks/useMovies";
 import About from "./pages/About";
-
+import Contact from "./components/Contact";
 
 
 
@@ -21,7 +21,7 @@ function App() {
       <Router>
         <NavBar/>
        <Routes>
-        <Route path="/" element={<HomePage/>}/>
+        <Route path="/" element={<Contact />}/>
         <Route path="/movie/:id" element={<PageDetails/>} />
         <Route path="/about-us" element={<About/>}/>
        </Routes>
