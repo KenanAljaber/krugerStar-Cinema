@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import "../styles/PageDetails.css"
 const PageDetails = () => {
 
-
+const estrellas = "&#9733; &#9733; &#9733; &#9733;";
     return (
         <>
             <Container className="mw-100">
@@ -21,7 +21,7 @@ const PageDetails = () => {
                             <Row className="mb-5">
                                 <Col>
                                     <h4>Overall rating</h4>
-                                    <h4><b className="text-danger">&#9733; &#9733; &#9733; &#9733;</b></h4>
+                                    <h4><b className="text-danger"> &#8902;</b></h4>
                                 </Col>
                             </Row>
                             <Row className="mb-5">
