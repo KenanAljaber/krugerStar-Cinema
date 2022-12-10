@@ -1,0 +1,14 @@
+.aboutContainer img{
+    width: 20%;
+  
+}
+
+.aboutContainer{
+    color: white;
+    display: flex;
+    flex-direction: row;
+     padding: 50px 0px 50px 0px; 
+    justify-content: space-between;
+    width: 100%;
+    min-height: 200px;
+}
