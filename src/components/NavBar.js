@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import "../styles/nav.css"
+import krugerLogo from "../assets/krugerLogo.png"
 
 function NavBar() {
     return (
@@ -13,8 +14,8 @@ function NavBar() {
                 <Container className=''>
                     <Nav>
                         <Nav.Item >
-                            <Link to="/Details">
-                                <Navbar.Brand className="titleName">NOMBRE</Navbar.Brand>
+                            <Link to="/">
+                                <Navbar.Brand className="titleName"><img src={krugerLogo} width="50px"/></Navbar.Brand>
                             </Link>
                         </Nav.Item>
                     </Nav>

@@ -1,4 +1,3 @@
-
 import HomePage from "./pages/HomePage";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styles/index.css";
@@ -7,11 +6,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import NavBar from "./components/NavBar"
 import Footer from "./components/Footer"
+import PageDetails from "./pages/PageDetails";
+import useMovies from "./hooks/useMovies";
+import About from "./pages/About";
 
 
 
 
 function App() {
+  useMovies();
   return (
     <Provider store={store}>
     <div className="App">
@@ -19,6 +22,8 @@ function App() {
         <NavBar/>
        <Routes>
         <Route path="/" element={<HomePage/>}/>
+        <Route path="/movie/:id" element={<PageDetails/>} />
+        <Route path="/about-us" element={<About/>}/>
        </Routes>
        <Footer/>
        </Router>
