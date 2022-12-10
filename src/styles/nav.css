@@ -1,46 +1,105 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+
+
+@media (min-width: 200px) and (max-width: 525px) {
+    
+  :root {
+      --title-padding-top: flex-start;
+    }
+  
+
+}
+
+@media (min-width: 525px) and (max-width: 725px) {
+  :root {
+      --align-self:end;
+    }
+}
+
+@media (min-width: 725px) and (max-width: 920px) {
+  :root {
+      --align-self: end;
+    }
+  }
+@media (min-width: 920px) and (max-width: 1600px) {
+  :root {
+      --align-self:center;
+    }
+}
+
 /* ESTILOS DEL NAVBAR*/
 .Navbar {
-    background-color: black !important;
-    border-bottom: 6px solid rgb(229, 9, 20);
-    /* border-bottom: 6px solid rgb(52, 58, 64); */
+  background-color: black !important;
+  /* border-bottom: 6px solid rgb(229, 9, 20); */
+  border-bottom: 6px solid rgb(52, 58, 64);
 }
+a{
+  text-decoration: none !important;
+}
+.titleName{
+  font-family: 'Josefin Sans', sans-serif !important;
+  font-size: 2.2em !important;
+  color: rgb(229, 9, 20) !important;
+}
+div.nav-item{
+align-self: var(--align-self) !important;
+padding: 4px 0px !important;
+}
+
 .itemsNav {
-    color: rgb(255, 255, 255) !important;    
-    margin: 8px !important;
-    font-weight: bold !important;
-    font-size: 1.2em !important;
+  color: rgb(255, 255, 255) !important;
+  font-weight: bold !important;
+  font-size: 1.2em !important;
+  margin: 15px !important;
+
 }
 
 .itemsNav:hover {
-    text-decoration: none !important;
-    color: rgb(229, 9, 20) !important; 
+  text-decoration: none !important;
+  color: rgb(229, 9, 20) !important;
 }
 
- /* ESTILOS DEL DROPDOWN.NAVBAR*/
+/* ESTILOS DEL DROPDOWN.NAVBAR*/
+
+a.dropdown-toggle.nav-link {
+  color: rgb(255, 255, 255) !important;
+  padding: 0px;
+}
+a.dropdown-toggle.nav-link:hover {
+  color: rgb(229, 9, 20) !important;
+}
+a.dropdown-item {
+  color: rgb(0, 0, 0) !important;
+}
+
 div.dropdown-menu.show {
-    background-color:rgb(255, 255, 255);
-  }
-  a.dropdown-item {
-    color: rgb(0, 0, 0) !important;    
-  }
-
-  a.dropdown-item:hover {
-    text-decoration: none !important;
-    color: rgb(255, 255, 255) !important; 
-    background-color: rgb(229, 9, 20);
+  background-color: rgb(255, 255, 255);
+}
+div.basic-nav-dropdown.nav-item.dropdown{
+  padding: 0px;
+  margin: 0px;
+}
+a.dropdown-item:hover {
+  text-decoration: none !important;
+  color: rgb(255, 255, 255) !important;
+  background-color: rgb(229, 9, 20);
 }
 
-  #basic-nav-dropdown{
-    color: white;
-    margin: 8px !important;
-    font-weight: bold !important;
-    font-size: 1.2em !important;
-    background-color: rgb(0, 0, 0);
+.basic-nav-dropdown {
+  margin: 0px 10px !important;
+  font-weight: bold !important;
+  font-size: 1.2em !important;
+  background-color: rgb(0, 0, 0);
+}
+
+.basic-nav-dropdown:hover {
+  color: rgb(229, 9, 20);
 }
 
 /* ESTILOS DEL FOOTER*/
-footer{
+footer {
   background-color: black;
   color: white;
   justify-content: space-evenly !important;
@@ -51,11 +110,13 @@ footer{
 
   /* border-top: 6px radial-gradient(red, yellow, rgb(30, 144, 255)) !important; */
 }
-footer p{
+
+footer p {
   margin: 1px;
-  font-size: 15px ;
+  font-size: 15px;
   text-align: center;
 }
+
 
  .gitLink:hover{
   color: white;
