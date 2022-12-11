@@ -9,6 +9,37 @@ export const DELETE_FAVORITE_BY_ID="favorite/DELETE";
 export const DELETE_ALL_FAVORITE="favorite/DELETE_ALL"
 
 
+//users
+export const ADD_USER="user/ADD";
+export const SET_USERS="user/SET-USERS";
+export const SET_CURRENT_USER="user/LOGIN-USE";
+
+
+//login/LOGOUT user
+export const setCurrentUser=(currentUser)=>{
+    console.log("setting")
+    return {
+        type: SET_CURRENT_USER,
+        payload: currentUser
+    }
+}
+
+//set users list
+export const setUsers=(users)=>{
+    return {
+        type: SET_USERS,
+        payload: users
+    }
+}
+
+//add user
+export const addUser=(user)=>{
+    return {
+        type: ADD_USER,
+        payload: user
+    }
+}
+
 //to add movies to favorites
 export const addFavorite=(movie)=>{
     return {
