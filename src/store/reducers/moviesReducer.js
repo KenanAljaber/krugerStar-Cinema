@@ -6,6 +6,7 @@ const default_movies_reducer = {
     filteredData: [],
     fav: [],
     searching: false,
+    currentUser:null
 
 
 }
