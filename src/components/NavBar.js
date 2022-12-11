@@ -10,7 +10,7 @@ function NavBar() {
     return (
 
         <>
-            <Navbar expand="lg" className='Navbar fixed-top'>
+            <Navbar expand="lg" className='Navbar '>
                 <Container className=''>
                     <Nav>
                         <Nav.Item >
