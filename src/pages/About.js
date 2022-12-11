@@ -1,11 +1,12 @@
 import "../styles/about.css"
 import kenanPhoto from "../assets/kenanPhoto.png"
+import arielPhoto from "../assets/arielFoto.jpeg"
 const About = () => {
     return (
         <div>
             <div className="aboutContainer">
                <div className="photosContainer">
-                    <img />
+                    <img src={arielPhoto}/>
                     <img src={kenanPhoto}/>
                     </div>
 
