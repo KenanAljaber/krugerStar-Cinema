@@ -39,7 +39,7 @@ function App(props) {
         <Route path="/about-us" element={<About/>}/>
         <Route path="/contact" element={<Contact />}/>
        </Routes>
-       </div> : <LoginPage/>
+       </div> : <Route path="/" element={<LoginPage/>}/>
        }
        <Footer/>
        

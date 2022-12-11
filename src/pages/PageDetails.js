@@ -70,7 +70,7 @@ const PageDetails = (props) => {
 
                                 </Col>
                                 <div className="backBtnContainer">
-                                <Link to="/"> <Button className="backButton" >Back</Button></Link>
+                                <Link to="/home"> <Button className="backButton" >Back</Button></Link>
                                 </div>
                                 
                             </Row>
