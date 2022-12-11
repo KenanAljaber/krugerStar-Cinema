@@ -1,6 +1,6 @@
 import "../styles/about.css"
 import kenanPhoto from "../assets/kenanPhoto.png"
-import ArielPhoto from "../assets/ArielPhoto.png"
+import ArielPhoto from "../assets/ArielPhoto.jpeg"
 const About = () => {
     return (
         <div>

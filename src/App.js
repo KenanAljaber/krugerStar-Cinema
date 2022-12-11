@@ -10,7 +10,7 @@ import PageDetails from "./pages/PageDetails";
 import useMovies from "./hooks/useMovies";
 import About from "./pages/About";
 import Contact from "./components/Contact";
-
+import Favourites from "./components/Favoutites";
 
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
         <Route path="/movie/:id" element={<PageDetails/>} />
         <Route path="/about-us" element={<About/>}/>
         <Route path="/contact" element={<Contact />}/>
+        <Route path="/favourites" element={<Favourites />}/>
        </Routes>
        <Footer/>
        </Router>
