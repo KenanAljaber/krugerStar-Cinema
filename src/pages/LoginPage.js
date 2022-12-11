@@ -1,7 +1,7 @@
 import { Row, Col, Container, Image } from "react-bootstrap";
 import "../styles/LoginPage.css"
 import { connect } from "react-redux"
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { addUser, setCurrentUser, setUsers } from "../store/actions/actions";
 import { Link } from "react-router-dom";
 const LoginPage = (props) => {
@@ -9,6 +9,9 @@ const LoginPage = (props) => {
 	const [email, setEmail] = useState("");
 	const [pass, setPass] = useState("");
 	const [users,setUsers]=useState([]);
+	const [warningMessage,setWarningMessage]=useState("This is a test message");
+	const warningRef=useRef(null);
+	const loginBoxRef=useRef(null);
 
 
 	useEffect( () => {
@@ -22,6 +25,18 @@ const LoginPage = (props) => {
 		}
 	}, [])
 
+	function handleLoginBoxClick(e){
+		const buttonTxt=e.target.textContent;
+		switch(buttonTxt){
+			case "Sign Up":
+				loginBoxRef.current.checked=true;
+				break;
+			case "Log In ":
+				loginBoxRef.current.checked=false;
+				break;
+		}
+	}
+
 	//este method va a ingresar el usuario a la app siempre y cuando esta registrado
 	//lo guarda en el local storage para guardar el usuario y no perderlo al recargar la pagina
 	const login = () => {
@@ -29,8 +44,18 @@ const LoginPage = (props) => {
 		if (currentUser) {
 			props.loginUser(currentUser);
 			localStorage.setItem("currentUser", JSON.stringify(currentUser));
-		} else alert("please make sure of the data");
+		} else{
+			showWarning("Please make sure of your email and password");
+		} 
 
+	}
+
+	function showWarning(message){
+		setWarningMessage(message);
+			warningRef.current.style.display="block"
+			setTimeout(()=>{
+				warningRef.current.style.display="none"
+			},2000)
 	}
 
 	//este method busca en los usuarios guardados si hay match para el email y la contraseña
@@ -55,6 +80,7 @@ const LoginPage = (props) => {
 				fav: []
 			}
 			if (!chekcUserExists(user.email)) {
+				showWarning("Successfully registered")
 				props.addUser(user);
 				setUsers(props.userReducer.users);
 				localStorage.setItem("users", JSON.stringify(props.userReducer.users));
@@ -62,13 +88,15 @@ const LoginPage = (props) => {
 				setEmail("");
 				setPass("");
 
+
 			}
 			else {
-				alert("email is already registered")
+				
+				showWarning("email is already registered");
 			}
 
 		} else {
-			alert("please fill the fields with correct info")
+			showWarning("please fill the fields with correct info");
 		}
 
 
@@ -125,13 +153,16 @@ const LoginPage = (props) => {
 		<img src={logo} alt=""></img>
 	</a> */}
 			<div className="loginContainer">
+				<div className="wariningContiner" id="warningLogin" ref={warningRef}>
+					{warningMessage}
+				</div>
 				<div className="section">
 					<Container className="">
 						<Row className=" full-height justify-content-center ">
 							<Col className="col-12 text-center align-self-center py-3 sectionbg">
 								<div className=" pb-2 pt-2 pt-sm-2 text-center ">
-									<h6 className="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
-									<input className="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+									<h6 className="mb-0 pb-3"><span onClick={handleLoginBoxClick}>Log In </span><span onClick={handleLoginBoxClick}>Sign Up</span></h6>
+									<input className="checkbox" ref={loginBoxRef} type="checkbox" id="reg-log" name="reg-log" />
 									<label htmlFor="reg-log"></label>
 									<div className="card-3d-wrap mx-auto">
 										<div className="card-3d-wrapper">
@@ -167,6 +198,7 @@ const LoginPage = (props) => {
 														<div className="form-group mt-2">
 															<input type="password" name="logpass" className="form-style" value={pass} placeholder="Your Password" id="logpass" autoComplete="off" onChange={handleChange}></input>
 															{/* <i className="input-icon uil uil-lock-alt"></i> */}
+															<p className="passHint">Password must be 6 charachters long</p>
 														</div>
 														<a href="#" className="btn mt-4" onClick={signup}>Sign up</a>
 													</div>
