@@ -47,5 +47,3 @@ const estrellas = "&#9733; &#9733; &#9733; &#9733;";
         </>
     );
 }
-
-export default PageDetails;
