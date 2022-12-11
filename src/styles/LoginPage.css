@@ -25,6 +25,23 @@
         --width:40%;
       }
 }
+.wariningContiner{
+    padding: 10px;
+    font-size: 1rem;
+    color: white;
+    background: black;
+    text-align: center;
+    display: none;
+}
+.passHint{
+    font-size: 8px;
+    margin-top: 5px;
+    color: #bf7c7c;
+    text-align: start;
+}
+.loginText:hover{
+    cursor: pointer;
+}
 
 .loginContainer {
     font-family: 'Poppins', sans-serif;
