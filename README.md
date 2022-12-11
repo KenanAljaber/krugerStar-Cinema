@@ -1,70 +1,98 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+<img src="./src/Assets/krugerRedmeLogo.png" height="100px"> <img src="./src/Assets/popcorn.png" width="100px"><br>
 
-## Available Scripts
+# Series Mix App
 
-In the project directory, you can run:
+<img src="https://img.shields.io/badge/MADE%20WITH%20-REACT-blue" height="25" />
+<img src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white" height="25" />
+<img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white" height="25" />
 
-### `npm start`
+>Este app fue creado para los amantes de series, busca entre las series mas famosas segun el genero que quieres, sepa mas de tus shows favoritos y agrega las series que te gustan a tus favoritos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ <a href="https://seriesmix-krugerstar.netlify.app/" target="_blank">Check Live app</a>
+</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+# 🎥 Project Details
+<div align="center">
+<img src="./src/assets/site_view.gif" >
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<div align="start" >
+    <h3>A todos aquellos fantaicos de las series y shows internacionales este app es para ustedes, en este app podras hacer lo siguiente :
+    </h3>
+</div>
 
-### `npm run build`
+- Buscar entre las series mas famosas seguna los generos nombres o paiess de produccion
+- Saber mas informacion sobre la serie y el rating que obtuvo 
+- Ir directamente al sitio oficial de la serie para comprarla o verla si gustas
+- Crear una lista de series favoritos
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Built with
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- JavaScript
+- React
+- Html+CSS 
+- Netlify
 
-### `npm run eject`
+## Live Demo
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<a href="https://seriesmix-krugerstar.netlify.app/">Live Demo</a>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🏁 Run it on your device
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Para poder correr este projecto en tu equipo debe instalar lo siguiente :
+ 
+ - <a href="https://git-scm.com/downloads">Git</a>
+ - <a href="https://nodejs.org/en/download/">Node.js</a>
 
-## Learn More
+ ## 💿 Instalacion
+Para instalar el proyecto sigue los siguientes pasos :
+    
+- Clonar el repositorio del proyecto corriendo este command:
+         `https://github.com/KenanAljaber/krugerStar-Cinema`
+ - instalar las librerias o dependencias:
+    <br>`cd <el nombre del archivo que contiene el proyect>`
+    <br>`npm install`
+- Correr el servidor
+    <br>`npm start`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 😬 Como funciona
+    Para Crear una cuenta, en la pagina principal puede presionar Sign up y crear una cuenta
+    
+<div align="center">
+<img src="./src/assets/login_site.gif" >
+</div>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Para ingresar a una cuenta
+ <div align="center">
+<img src="./src/assets/login_site2.gif" >
+</div> 
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Author
 
-### Analyzing the Bundle Size
+👤 **Kenan Aljaber**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- GitHub: [Kenan Aljaber](https://github.com/KenanAljaber)
+- LinkedIn: [Kenan Aljaber](https://www.linkedin.com/in/kenan-aljaber-a232aa187/)
 
-### Making a Progressive Web App
+👤 **Ariel Piguave**
+- GitHub: [Ariel Piguave](https://github.com/Piguave)
+- LinkedIn: [Ariel Piguave](https://ec.linkedin.com/in/angel-ariel-piguave-bermello-032bab240?trk=public_profile_samename-profile&original_referer=https%3A%2F%2Fec.linkedin.com%2Fin%2Fangel-ariel-piguave-449a8190)
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- [Juan Sotomayor](https://github.com/Juanse7793) - Tutor Kruger star
 
-### Advanced Configuration
+ ## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Give a ⭐ if you like this project!
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ 
+
