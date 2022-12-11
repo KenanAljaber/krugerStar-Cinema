@@ -87,6 +87,7 @@ const LoginPage = (props) => {
 				setName("");
 				setEmail("");
 				setPass("");
+				loginBoxRef.current.checked=false;
 
 
 			}
