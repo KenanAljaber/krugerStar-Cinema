@@ -21,9 +21,10 @@ function App() {
       <Router>
         <NavBar/>
        <Routes>
-        <Route path="/" element={<Contact />}/>
+        <Route path="/" element={<HomePage />}/>
         <Route path="/movie/:id" element={<PageDetails/>} />
         <Route path="/about-us" element={<About/>}/>
+        <Route path="/contact" element={<Contact />}/>
        </Routes>
        <Footer/>
        </Router>
