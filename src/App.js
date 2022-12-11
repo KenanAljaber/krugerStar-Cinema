@@ -13,12 +13,19 @@ import Contact from "./components/Contact";
 import {connect} from "react-redux"
 import userReducer from "./store/reducers/userReducer";
 import LoginPage from "./pages/LoginPage";
+import { useEffect } from "react";
+import { setCurrentUser } from "./store/actions/actions";
 
 
 
 function App(props) {
   useMovies();
-  console.log(props.userReducer.currentUser);
+  useEffect(()=>{
+    if(localStorage.getItem("currentUser")){
+        const currUSer=JSON.parse(localStorage.getItem("currentUser"));
+        props.setCurrentUser(currUSer);
+    }
+  },[])
   return (
     
       <Router>
@@ -48,4 +55,7 @@ const mapStateToProps=(state)=>{
     userReducer: state.userReducer
   }
 }
-export default connect(mapStateToProps)(App);
+const mapDispatcherToProps={
+  setCurrentUser:setCurrentUser
+}
+export default connect(mapStateToProps,mapDispatcherToProps)(App);
