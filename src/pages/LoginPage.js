@@ -161,7 +161,7 @@ const LoginPage = (props) => {
 						<Row className=" full-height justify-content-center ">
 							<Col className="col-12 text-center align-self-center py-3 sectionbg">
 								<div className=" pb-2 pt-2 pt-sm-2 text-center ">
-									<h6 className="mb-0 pb-3"><span onClick={handleLoginBoxClick}>Log In </span><span onClick={handleLoginBoxClick}>Sign Up</span></h6>
+									<h6 className="mb-0 pb-3"><span onClick={handleLoginBoxClick} className="loginText">Log In </span><span className="loginText" onClick={handleLoginBoxClick}>Sign Up</span></h6>
 									<input className="checkbox" ref={loginBoxRef} type="checkbox" id="reg-log" name="reg-log" />
 									<label htmlFor="reg-log"></label>
 									<div className="card-3d-wrap mx-auto">
