@@ -14,7 +14,7 @@ function NavBar(props) {
     const logout=()=>{
         console.log("loging out")
         props.setCurrentUser(null);
-            localStorage.removeItem("currentUser");
+        localStorage.removeItem("currentUser");
     }
 
     return (
@@ -48,7 +48,7 @@ function NavBar(props) {
                                 <NavDropdown title={props.userReducer.currentUser.name} className="basic-nav-dropdown" >
                                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                                     <NavDropdown.Divider />
-                                    <Link to="/" className="" onClick={logout}> <NavDropdown.Item>
+                                    <Link to="/login" className="" onClick={logout}> <NavDropdown.Item>
                                         Logout 
                                     </NavDropdown.Item></Link>
                                 </NavDropdown>
