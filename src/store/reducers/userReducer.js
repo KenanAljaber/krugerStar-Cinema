@@ -7,14 +7,16 @@ const default_user_reducer = {
 
 }
 
-const userReducer = (state = default_user_reducer, action) => {
+const userReducer = (state = { users: [],
+    currentUser: null}, action) => {
     switch (action.type) {
         case SET_USERS:
             console.log("usersSet")
             return {
                 ...state,
-                users: state.users = [...action.payload]
+                users : action.payload
             }
+                    
         case ADD_USER:
             console.log("userAdded")
             return {

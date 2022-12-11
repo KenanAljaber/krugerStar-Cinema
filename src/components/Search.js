@@ -24,8 +24,10 @@ const Search = (props) => {
         if(data===""){
             props.cancelSearch([]);
 
+        }else{
+            props.searchMovies(filteredData);
         }
-        props.searchMovies(filteredData);
+        
       
 
 

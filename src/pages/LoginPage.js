@@ -8,14 +8,20 @@ const LoginPage = (props) => {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [pass, setPass] = useState("");
+	const [users,setUsers]=useState([]);
 
 
-	useEffect(() => {
+	useEffect( () => {
 		if (localStorage.getItem("users")) {
-			const users = JSON.parse(localStorage.getItem("users"));
-			props.setUsers(users);
+			const localUsers =  JSON.parse(localStorage.getItem("users"));
+			props.setUsers(localUsers)	
+			setUsers(localUsers);
+		}else{
+			props.setUsers([])	
+			setUsers([]);
 		}
 	}, [])
+
 	//este method va a ingresar el usuario a la app siempre y cuando esta registrado
 	//lo guarda en el local storage para guardar el usuario y no perderlo al recargar la pagina
 	const login = () => {
@@ -29,7 +35,6 @@ const LoginPage = (props) => {
 
 	//este method busca en los usuarios guardados si hay match para el email y la contraseña
 	function checkLogin(email, pass) {
-		const users = props.userReducer.users;
 		let currUser = null;
 		users.forEach(it => {
 			if (it.email.toLowerCase() === email && it.pass === pass) {
@@ -51,7 +56,7 @@ const LoginPage = (props) => {
 			}
 			if (!chekcUserExists(user.email)) {
 				props.addUser(user);
-				console.log(props.userReducer.users, user)
+				setUsers(props.userReducer.users);
 				localStorage.setItem("users", JSON.stringify(props.userReducer.users));
 				setName("");
 				setEmail("");
@@ -63,7 +68,6 @@ const LoginPage = (props) => {
 			}
 
 		} else {
-			console.log("not valid");
 			alert("please fill the fields with correct info")
 		}
 
@@ -75,7 +79,6 @@ const LoginPage = (props) => {
 	 * @returns true si el correo exite y false si no
 	 */
 	function chekcUserExists(email) {
-		let users = props.userReducer.users;
 		return users.find(it => it.email.toLowerCase() === email.toLowerCase());
 	}
 
@@ -137,11 +140,11 @@ const LoginPage = (props) => {
 													<div className="section text-center">
 														<h4 className="mb-4 pb-3">Log In</h4>
 														<div className="form-group">
-															<input type="email" name="logemail" className="form-style" placeholder="Your Email" id="logemail" autoComplete="off" onChange={handleChange}></input>
+															<input type="email" value={email} name="logemail" className="form-style" placeholder="Your Email" id="logemail" autoComplete="off" onChange={handleChange}></input>
 															{/* <i className="input-icon uil uil-at"></i> */}
 														</div>
 														<div className="form-group mt-2">
-															<input type="password" name="logpass" className="form-style" placeholder="Your Password" id="logpass" autoComplete="off" onChange={handleChange}></input>
+															<input type="password" name="logpass" value={pass} className="form-style" placeholder="Your Password" id="logpass" autoComplete="off" onChange={handleChange}></input>
 															{/* <i className="input-icon uil uil-lock-alt"></i> */}
 														</div>
 														<Link to={"/home"}><p className="btn mt-4" onClick={login}>Login</p></Link>

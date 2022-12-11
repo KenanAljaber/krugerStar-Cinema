@@ -17,7 +17,6 @@ export const SET_CURRENT_USER="user/LOGIN-USE";
 
 //login/LOGOUT user
 export const setCurrentUser=(currentUser)=>{
-    console.log("setting")
     return {
         type: SET_CURRENT_USER,
         payload: currentUser
