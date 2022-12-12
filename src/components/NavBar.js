@@ -33,7 +33,7 @@ function NavBar(props) {
                     <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
                         <Nav className="">
                             <Nav.Item>
-                                <Link to="/home" className="itemsNav">Home </Link>
+                                <Link to="/" className="itemsNav">Home </Link>
                             </Nav.Item>
                             <Nav.Item>
                                 <Link to="/favourites" className="itemsNav">My Favourites </Link>
