@@ -5,8 +5,18 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import "../styles/nav.css"
 import krugerLogo from "../assets/krugerLogo.png"
+import {connect} from "react-redux"
+import { setCurrentUser } from '../store/actions/actions';
 
-function NavBar() {
+
+function NavBar(props) {
+
+    const logout=()=>{
+        console.log("loging out")
+        props.setCurrentUser(null);
+        localStorage.removeItem("currentUser");
+    }
+
     return (
 
         <>
@@ -23,7 +33,7 @@ function NavBar() {
                     <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
                         <Nav className="">
                             <Nav.Item>
-                                <Link to="/" className="itemsNav">Home </Link>
+                                <Link to="/home" className="itemsNav">Home </Link>
                             </Nav.Item>
                             <Nav.Item>
                                 <Link to="/about-us" className="itemsNav">About Us </Link>
@@ -35,12 +45,12 @@ function NavBar() {
                                 <Link to="/contact" className="itemsNav">Contact </Link>
                             </Nav.Item>
                             <Nav.Item >
-                                <NavDropdown title={"Usuario"} className="basic-nav-dropdown" >
+                                <NavDropdown title={props.userReducer.currentUser.name} className="basic-nav-dropdown" >
                                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                                     <NavDropdown.Divider />
-                                    <NavDropdown.Item>
-                                        <Link to="/" className="">Logout </Link>
-                                    </NavDropdown.Item>
+                                    <Link to="/login" className="" onClick={logout}> <NavDropdown.Item>
+                                        Logout 
+                                    </NavDropdown.Item></Link>
                                 </NavDropdown>
                             </Nav.Item>
                         </Nav>
@@ -51,5 +61,12 @@ function NavBar() {
 
     );
 }
-
-export default NavBar;
+const mapStateToProps=(state)=>{
+    return {
+        userReducer:state.userReducer
+    }
+}
+const mapDispatcherToProps={
+    setCurrentUser: setCurrentUser,
+}
+export default connect(mapStateToProps,mapDispatcherToProps)(NavBar);

@@ -24,8 +24,10 @@ const Search = (props) => {
         if(data===""){
             props.cancelSearch([]);
 
+        }else{
+            props.searchMovies(filteredData);
         }
-        props.searchMovies(filteredData);
+        
       
 
 
@@ -46,7 +48,7 @@ const Search = (props) => {
      */
     function filterData(value,arr){
             const filteredData= arr.reduce((accum,actual)=>{
-                if(actual.name.toLowerCase().includes(value) || actual.geners.toString().toLowerCase().includes(value)){
+                if(actual.name.toLowerCase().includes(value.toLowerCase()) || actual.geners.toString().toLowerCase().includes(value.toLowerCase())){
                     accum.push(actual);
                 }
                 return accum;

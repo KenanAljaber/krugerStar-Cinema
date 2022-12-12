@@ -6,16 +6,18 @@ import { useState } from "react";
 import "../styles/PageDetails.css"
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-const PageDetails = ({moviesReducer}) => {
+
+const PageDetails = (props) => {
     const id=useParams("id:").id.substring(3);
     const [currentMovie,setCurrentMovie]=useState(null);
+    
         useEffect(()=>{
+
+                setCurrentMovie(findMovieByID(id,JSON.parse(localStorage.getItem("movies"))));
                 
-                setCurrentMovie(findMovieByID(id,moviesReducer.data));
-                console.log(currentMovie);
         },[])
         function findMovieByID(id,data){
-            
+                
                 const  movie= data.find(element=> element.id===id);
                 return movie;
         }
@@ -28,6 +30,7 @@ const PageDetails = ({moviesReducer}) => {
                 //getStarsFromRating(currentMovie.rating)
                 return stars;
         }
+
     return (
         <>
         { currentMovie&&
@@ -63,11 +66,11 @@ const PageDetails = ({moviesReducer}) => {
                                     <Button type="button" id="watch" className="bg-light p-2 ">
                                         <a className='text-decoration-none' target="_blank" rel="noreferrer" href={currentMovie.officialSite} >&#x25BA; Watch</a>
                                     </Button>
-                                    <Button className="bg-danger p-2 m-2" >+ Add to favorites</Button>
+                                    <Button className="bg-danger p-2 m-2"  >+ Add to favorites</Button>
 
                                 </Col>
                                 <div className="backBtnContainer">
-                                <Link to="/"> <Button className="backButton" >Back</Button></Link>
+                                <Link to="/home"> <Button className="backButton" >Back</Button></Link>
                                 </div>
                                 
                             </Row>
@@ -81,6 +84,7 @@ const PageDetails = ({moviesReducer}) => {
         </>
     );
 }
+
 const mapPropsToParams=(state)=>{
     return{
         moviesReducer: state.movies_reducer,
