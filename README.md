@@ -60,6 +60,7 @@ Para instalar el proyecto sigue los siguientes pasos :
 - Correr el servidor
     <br>`npm start`
 
+
 ## 😬 Como funciona
     Para Crear una cuenta, en la pagina principal puede presionar Sign up y crear una cuenta
     
@@ -77,8 +78,10 @@ Para instalar el proyecto sigue los siguientes pasos :
 <img src="./src/assets/favs.gif" >
 </div>
 
+## 🤓 Video Explecativo
+ <a href="https://seriesmix-krugerstar.netlify.app/" target="_blank">Watch video</a>
 
-## Author
+## ✍️ Author
 
 👤 **Kenan Aljaber**
 
