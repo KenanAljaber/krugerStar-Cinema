@@ -72,6 +72,11 @@ Para instalar el proyecto sigue los siguientes pasos :
 <img src="./src/assets/login_site2.gif" >
 </div> 
 
+    Para agregar a favoritos
+<div align="center">
+<img src="./src/assets/favs.gif" >
+</div>
+
 
 ## Author
 
