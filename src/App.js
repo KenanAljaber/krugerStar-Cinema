@@ -11,10 +11,11 @@ import useMovies from "./hooks/useMovies";
 import About from "./pages/About";
 import Contact from "./components/Contact";
 import {connect} from "react-redux"
-import userReducer from "./store/reducers/userReducer";
+import Favourites from "./components/Favorites"
 import LoginPage from "./pages/LoginPage";
 import { useEffect } from "react";
 import { setCurrentUser } from "./store/actions/actions";
+import FavoritesPage from "./pages/FavoritesPage";
 
 
 
@@ -38,6 +39,7 @@ function App(props) {
         <Route path="/movie/:id" element={<PageDetails/>} />
         <Route path="/about-us" element={<About/>}/>
         <Route path="/contact" element={<Contact />}/>
+        <Route path="/favourites" element={<FavoritesPage />}/>
        </Routes>
        </div> : 
        <Routes>

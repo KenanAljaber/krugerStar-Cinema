@@ -1,0 +1,33 @@
+@media (min-width: 200px) and (max-width: 525px) {
+    
+    :root {
+        --width:100%;
+      }
+    
+  
+}
+
+@media (min-width: 525px) and (max-width: 725px) {
+    :root {
+        --width:60%;
+      }
+}
+
+@media (min-width: 725px) and (max-width: 920px) {
+    :root {
+        --width:70%;
+      }
+    }
+@media (min-width: 920px) and (max-width: 1600px) {
+    :root {
+        --width:70%;
+      }
+}
+
+.contenedorf{
+    /*width: var(--width);*/
+}
+
+.contenedorf img{
+    padding: 10px;
+}

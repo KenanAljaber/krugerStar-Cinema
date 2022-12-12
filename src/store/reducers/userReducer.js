@@ -1,22 +1,18 @@
-import { ADD_USER, SET_CURRENT_USER, SET_USERS } from "../actions/actions";
+import { ADD_USER, SET_CURRENT_USER, SET_USERS} from "../actions/actions";
 
-const default_user_reducer = {
+
+const userReducer = (state = {
     users: [],
     currentUser: null
-
-
-}
-
-const userReducer = (state = { users: [],
-    currentUser: null}, action) => {
+}, action) => {
     switch (action.type) {
         case SET_USERS:
             console.log("usersSet")
             return {
                 ...state,
-                users : action.payload
+                users: action.payload
             }
-                    
+
         case ADD_USER:
             console.log("userAdded")
             return {
@@ -24,11 +20,12 @@ const userReducer = (state = { users: [],
                 users: state.users.push(action.payload)
             }
         case SET_CURRENT_USER:
-            console.log("login user")
+            console.log("set current user")
             return {
                 ...state,
                 currentUser: action.payload
             }
+      
         default:
             return state;
     }

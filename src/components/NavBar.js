@@ -36,18 +36,17 @@ function NavBar(props) {
                                 <Link to="/home" className="itemsNav">Home </Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Link to="/about-us" className="itemsNav">About Us </Link>
+                                <Link to="/favourites" className="itemsNav">My Favourites </Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Link to="/favourites" className="itemsNav">My Favourites </Link>
+                                <Link to="/about-us" className="itemsNav">About Us </Link>
                             </Nav.Item>
                             <Nav.Item>
                                 <Link to="/contact" className="itemsNav">Contact </Link>
                             </Nav.Item>
                             <Nav.Item >
                                 <NavDropdown title={props.userReducer.currentUser.name} className="basic-nav-dropdown" >
-                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                    <NavDropdown.Divider />
+                                   
                                     <Link to="/login" className="" onClick={logout}> <NavDropdown.Item>
                                         Logout 
                                     </NavDropdown.Item></Link>

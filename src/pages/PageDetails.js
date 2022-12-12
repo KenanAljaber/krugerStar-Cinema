@@ -1,34 +1,80 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Row, Col, Container, Image } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
-import { useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { useState } from "react";
 import "../styles/PageDetails.css"
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { addFavorite, setCurrentUser, setUsers } from "../store/actions/actions";
 
 const PageDetails = (props) => {
     const id=useParams("id:").id.substring(3);
     const [currentMovie,setCurrentMovie]=useState(null);
+    const [favoriteText,setFavoriteText]=useState("");
+    const [currentUser,setCurrentUser]=useState(null);
+    const favRef=useRef(null);
     
+   
         useEffect(()=>{
-
-                setCurrentMovie(findMovieByID(id,JSON.parse(localStorage.getItem("movies"))));
                 
-        },[])
+                setCurrentMovie(findMovieByID(id,JSON.parse(localStorage.getItem("movies"))));
+                setCurrentUser(props.userReducer.currentUser);
+              
+                if(currentUser){
+                    isMovieFavorite();
+                }
+               
+                
+        },[currentUser,favoriteText])
         function findMovieByID(id,data){
                 
                 const  movie= data.find(element=> element.id===id);
                 return movie;
         }
 
-        function getStarsFromRating(rating){
-                let stars="";
-                for(let i=0;i<rating;i++){
-                    stars=stars+`&#9733;` 
+        function isMovieFavorite(){
+          for (let i=0;i<currentUser.fav.length;i++){
+                const currFav= currentUser.fav[i];
+                if(currFav.id === currentMovie.id){
+                        changeFavBtn(true);
+                        return;
                 }
-                //getStarsFromRating(currentMovie.rating)
-                return stars;
+            }
+          changeFavBtn(false);
+        }
+
+        function changeFavBtn(isFavorite){
+                if(isFavorite){
+                    setFavoriteText(currentMovie.name+" is in your favorite ❤️");
+                    favRef.current.disabled=true;
+                }else{
+                    setFavoriteText("+ Add to favorite");
+                    favRef.current.disabled=false;
+                }
+        }
+
+        function addToFavorite(){
+            const updatedUser=currentUser;
+            updatedUser.fav.unshift(currentMovie);
+            props.updateCurrentUser(updatedUser);
+            setCurrentUser(updatedUser);
+            changeFavBtn(true);
+            localStorage.setItem("currentUser",JSON.stringify(currentUser));
+            modifyUsersList();
+        }
+
+        function modifyUsersList(){
+                
+               const users=props.userReducer.users;
+                for(let i=0;i<users.length;i++){
+                    const user=users[i];
+                    if(user.email===currentUser.email){
+                        users[i]=currentUser;
+                    }
+                }
+                props.updateUsers(users);
+               localStorage.setItem("users",JSON.stringify(users));
         }
 
     return (
@@ -66,7 +112,7 @@ const PageDetails = (props) => {
                                     <Button type="button" id="watch" className="bg-light p-2 ">
                                         <a className='text-decoration-none' target="_blank" rel="noreferrer" href={currentMovie.officialSite} >&#x25BA; Watch</a>
                                     </Button>
-                                    <Button className="bg-danger p-2 m-2"  >+ Add to favorites</Button>
+                                    <Button className="bg-danger p-2 m-2" ref={favRef}  onClick={addToFavorite}>{favoriteText}</Button>
 
                                 </Col>
                                 <div className="backBtnContainer">
@@ -88,6 +134,13 @@ const PageDetails = (props) => {
 const mapPropsToParams=(state)=>{
     return{
         moviesReducer: state.movies_reducer,
+        userReducer: state.userReducer
     };
 }
-export default connect(mapPropsToParams)(PageDetails);
+
+const mapDispatcherToProps={
+    addFav: addFavorite,
+    updateCurrentUser:setCurrentUser,
+    updateUsers:setUsers
+}
+export default connect(mapPropsToParams,mapDispatcherToProps)(PageDetails);
