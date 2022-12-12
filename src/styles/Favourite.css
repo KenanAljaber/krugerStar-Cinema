@@ -25,5 +25,14 @@
 }
 
 .contenedorf{
-    width: var(--width);
+    /*width: var(--width);*/
+}
+
+.contenedorf img{
+    padding: 10px;
+}
+.imageF{
+    height: 300px !important;
+    width: 250px !important;
+    object-fit: cover;
 }

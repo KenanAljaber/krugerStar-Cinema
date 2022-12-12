@@ -57,10 +57,10 @@ export const delteFavoriteById=(id)=>{
 
 
 //to delte all movies from favorites
-export const deleteAllFavorites=([])=>{
+export const deleteAllFavorites=(arr=[])=>{
     return {
         type: DELETE_ALL_FAVORITE,
-        payload: []
+        payload: arr
     }
 }
 
