@@ -9,6 +9,7 @@ const Favourites = ({movie,userReducer,updateCurrentUser,setUsers}) => {
     function handleDeleteFav(){
        updateUsers();
     }
+    
     function updateUsers(){
         const users=userReducer.users;
         const currentUser=userReducer.currentUser;
@@ -67,7 +68,7 @@ const Favourites = ({movie,userReducer,updateCurrentUser,setUsers}) => {
                             <b>{movie.summary}</b>
                             <br />
                             <Button type="button" id="watch" className="bg-light p-2 mt-3">
-                                <a className='text-decoration-none' target="_blank" rel="noreferrer" href='' >&#x25BA; Watch</a>
+                                <a className='text-decoration-none' target="_blank" rel="noreferrer" href={movie.officialSite} >&#x25BA; Watch</a>
                             </Button>
                         </Col>
                     </Row>
