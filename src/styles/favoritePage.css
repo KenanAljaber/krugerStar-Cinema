@@ -1,0 +1,43 @@
+.deleteAll{
+    padding: 10px;
+    border-style: none;
+    border-radius: 10px;
+    background-color: var(--red);
+    color: white;
+    box-shadow: 1px 1px 5px 0px white;
+    width: 100px;
+}
+
+.deleteContianer{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.deleteAll:hover{
+    background-color: white;
+    color: var(--red);
+    transition: 1s;
+    animation: pop 0.8s linear forwards;
+    box-shadow: 1px 1px 5px 0px var(--red);
+}
+
+@keyframes pop {
+
+    0%{
+        transform: scale(100%);
+    }40%{
+        transform: scale(110%);
+    }100%{
+        transform: scale(100%);
+    }
+
+    
+}
+
+.noFav{
+text-align: center;
+margin: 20%;
+}
+.cont{
+    height:100vh;
+}
