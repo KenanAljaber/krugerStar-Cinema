@@ -1,7 +1,7 @@
 import { useEffect,useState } from "react";
 import { FETCHED_MOVIES } from "../store/actions/actions";
 import store from "../store/MovieStore";
-import axios from "axios"
+import axios from "axios";
 
 const useMovies = () => {
     const [movies,setMovies]=useState();

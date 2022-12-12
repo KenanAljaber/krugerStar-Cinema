@@ -38,6 +38,7 @@ function App(props) {
         <Route path="/movie/:id" element={<PageDetails/>} />
         <Route path="/about-us" element={<About/>}/>
         <Route path="/contact" element={<Contact />}/>
+        <Route path="/favourites" element={<Favourites />}/>
        </Routes>
        </div> : 
        <Routes>
