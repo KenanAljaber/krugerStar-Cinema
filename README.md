@@ -1,6 +1,6 @@
 
 <div align="center">
-<img src="./src/Assets/krugerRedmeLogo.png" height="100px"> <img src="./src/Assets/popcorn.png" width="100px"><br>
+<img src="./src/assets/krugerRedmeLogo.png" height="100px"> <img src="./src/assets/popcorn.png" width="100px"><br>
 
 # Series Mix App
 
