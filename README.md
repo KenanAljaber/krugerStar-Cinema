@@ -79,7 +79,7 @@ Para instalar el proyecto sigue los siguientes pasos :
 </div>
 
 ## 🤓 Video Explecativo
- <a href="https://seriesmix-krugerstar.netlify.app/" target="_blank">Watch video</a>
+ <a href="https://mega.nz/file/BbhVFaIY#ww578iVy0jgBMGwJUPghYdulnTmzi-ErwgycBDXL6zw" target="_blank">Watch video</a>
 
 ## ✍️ Author
 
