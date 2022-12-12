@@ -109,9 +109,9 @@ const PageDetails = (props) => {
                                     <h6>Geners: {currentMovie.geners}</h6>
                                     <h6>Language: {currentMovie.language}</h6>
                                     <h6>End Date: {currentMovie.endDate}</h6>
-                                    <Button type="button" id="watch" className="bg-light p-2 ">
-                                        <a className='text-decoration-none' target="_blank" rel="noreferrer" href={currentMovie.officialSite} >&#x25BA; Watch</a>
-                                    </Button>
+                                   <a href={currentMovie.officialSite} target="_blank"> <Button type="button" id="watch" className="bg-light p-2 ">
+                                       &#x25BA; Watch
+                                    </Button></a>
                                     <Button className="bg-danger p-2 m-2" ref={favRef}  onClick={addToFavorite}>{favoriteText}</Button>
 
                                 </Col>

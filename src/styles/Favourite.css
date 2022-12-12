@@ -26,6 +26,7 @@
 
 .contenedorf{
     /*width: var(--width);*/
+    animation: slide linear 0.8s forwards;
 }
 
 .contenedorf img{
@@ -36,3 +37,12 @@
     width: 250px !important;
     object-fit: cover;
 }
+@keyframes slide {
+    0%{
+        transform: translateX(400px);
+    }100%{
+        transform: translateX(0px);
+    }
+    
+}
+

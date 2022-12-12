@@ -58,18 +58,18 @@ const Favourites = ({movie,userReducer,updateCurrentUser,setUsers}) => {
                         <div className="d-flex justify-content-between">
                         <span className="d-flex "><h1>{movie.name}<h3 className="text-muted">Overall rating</h3></h1></span>
 
-                                <Button type="button" id="watch" className="bg-danger p-2 mt-3" onClick={handleDeleteFav}>
-                                    <a className='text-decoration-none text-light'  rel="noreferrer" href='#' >Delete</a>
-                                </Button>
+                        <a className='text-decoration-none text-light'  rel="noreferrer" href='#' > <Button type="button" id="watch" className="bg-danger p-2 mt-3" onClick={handleDeleteFav}>
+                                 delete
+                                </Button></a>
                             </div>
                           
                             <p> &#9733; {movie.rating}/10</p>
                             <h4>Synopsis:</h4>
                             <b>{movie.summary}</b>
                             <br />
-                            <Button type="button" id="watch" className="bg-light p-2 mt-3">
-                                <a className='text-decoration-none' target="_blank" rel="noreferrer" href={movie.officialSite} >&#x25BA; Watch</a>
-                            </Button>
+                            <a className='text-decoration-none' target="_blank" rel="noreferrer" href={movie.officialSite} > <Button type="button" id="watch" className="bg-light p-2 mt-3">
+                              &#x25BA; Watch
+                            </Button></a>
                         </Col>
                     </Row>
                 </Card>
