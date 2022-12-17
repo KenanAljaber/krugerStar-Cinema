@@ -1,0 +1,80 @@
+@media (min-width: 200px) and (max-width: 525px) {
+    
+    :root {
+        --title-padding-top:10px;
+      }
+    
+  
+}
+
+@media (min-width: 525px) and (max-width: 725px) {
+    :root {
+        --title-padding-top:10px;
+      }
+}
+
+@media (min-width: 725px) and (max-width: 920px) {
+    :root {
+        --title-padding-top:110px;
+      }
+    }
+@media (min-width: 920px) and (max-width: 1600px) {
+    :root {
+        --title-padding-top:110px;
+      }
+}
+
+.DetailsTitle {
+    padding-top: var(--title-padding-top);;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movieDetails {
+    background-color: black !important;
+    color: white !important;
+    display: flex !important;
+    flex-direction: row !important;
+    font-size: 20px;
+}
+
+.DetailsImg {
+    padding-top: 100px;
+    margin-bottom: 10px;
+    width: 100%;
+
+}
+
+
+.DetailsTitle h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+.backBtnContainer{
+    text-align: center;
+}
+.backButton{
+    width: 20%;
+    --bs-bg-opacity: 1;
+    background-color: var(--red)!important;
+}
+
+.backButton:hover{
+    background-color: white!important;
+    color: var(--red)!important;
+    transition: 1s;
+}
+.bg-danger:hover{
+    background-color: white!important;
+    color: var(--red)!important;
+    transition: 1s;
+}
+.bg-light{
+    color: #0B63E3!important;;
+}
+.bg-light:hover{
+    background-color: #0B63E3!important;
+    color: white!important;
+    transition: 1s;
+}

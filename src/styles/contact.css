@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&display=swap');
+
+
+@media (min-width: 200px) and (max-width: 525px) {
+    
+    :root {
+        --margin-contenedor-contact:30px 10px;
+      }
+}
+
+@media (min-width: 525px) and (max-width: 725px) {
+    :root {
+        --margin-contenedor-contact:30px 20px;
+      }
+}
+
+@media (min-width: 725px) and (max-width: 920px) {
+    :root {
+        --margin-contenedor-contact:30px 200px;
+      }
+    }
+@media (min-width: 920px) and (max-width: 1200px) {
+    :root {
+        --margin-contenedor-contact:30px 300px;
+      }
+
+}
+@media (min-width: 1200px) and (max-width: 2210px) {
+    :root {
+        --margin-contenedor-contact:30px 400px;
+      }
+
+}
+
+.form-control:focus {
+    border-color: rgb(229, 9, 20) !important;
+    box-shadow: 0 0 0 0.2rem rgba(207, 35, 32, 0.408) !important;
+} 
+.contact-title{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 48px;
+    line-height: 72px;
+    text-align: center;
+    letter-spacing: -0.015em;
+    color: #ffffff;
+    margin-top: 20px;
+}
+.contenedor-contact{
+    display: flex;
+    flex-direction: column;
+    margin: var(--margin-contenedor-contact);
+    border: 1px solid rgba(255, 41, 41, 0.942);
+    box-shadow: 2px 1px 17px 0px red;
+    border-radius: 20px;
+    background-color: rgb(57, 52, 52);
+}
+.form-title{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.015em;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+.contenedor-form{
+    margin: 30px 30px;
+}
+.contenedor-form input{
+    margin-bottom: 30px;
+}
+.contenedor-form button{
+    margin-top: 20px;
+}
